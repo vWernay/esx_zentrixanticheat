@@ -14,9 +14,9 @@ Esse script é gerado por muitos trabalhos anteriores, mas principalmente, os do
 
 **Instalação:** Coloque a pasta no diretório de resources e configure o script de acordo com o seu servidor, adicione "esx_zentrixanticheat" no server.cfg, e inicie o servidor.
 
-**Configuração:** o arquivo de configuração que são os: **webhook.lua** e **checkcheater.lua** permite que você defina seu webhook, as armas bloqueadas e as props bloqueadas, os steamIDs da lista de permissões que não são incluídos na lista de permissões automática com base no grupo deles e defina seus objetos, veículos e armas na lista negra.
+**Configuração:** o arquivo de configuração que são os: **webhook.lua** e **checkcheater.lua** permite que você defina seu webhook, as armas bloqueadas e as props bloqueadas.
 
-**O que ele faz:** banirá usuários e enviara nos logs os jogadores que tentarem usar **eventos** proibidos como spawn de dinheiro, os carros da blacklist serão excluídos, caso o player pegue uma arma blacklist ele enviará no discord o **nome** e **id** do jogador que fez isto. 
+**O que ele faz:** banirá usuários e enviara nos logs os jogadores que tentarem usar **eventos** proibidos como spawn de dinheiro, os carros da blacklist serão excluídos, caso o player pegue uma arma blacklist ele enviará no discord o **nome** e o **id** do jogador que fez isto. 
 
 **Controle de Banimentos:** Os banimentos ficam guardados na pasta: **data/bans.txt**. Para desbanir um jogador é só remover os identificadores dele.
 
