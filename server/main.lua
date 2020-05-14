@@ -207,7 +207,6 @@ local EventosHacker = { -- REMOVA ALGUNS CASO SEU SERVIDOR ULTILIZE
     "vrp:teleportar",
     "esx_vehicleshop:setVehicleOwned", ----- REMOVA CASO USE OS TRIGGERS PADRÕES
     "esx_mafiajob:getOtherPlayerData", -------- REMOVA CASO USE OS TRIGGERS PADRÕES
-    "_chat:messageEntered",
     "xaxaxaxaxaxaxaxaxax",
     "lscustoms:payGarage",
     "esx_jobs:caution",
