@@ -7,12 +7,14 @@ version '0.2.0'
 
 client_scripts {
     'ZentryAnticheat.Client.net.dll',
+    'config.lua',
     'client/checkcheater.lua',
     'client/main.lua'
 }
 
 server_scripts {
     'ZentryAnticheat.Server.net.dll',
+    'config.lua',
     'server/webhook.lua',
     'server/main.lua'
 }
