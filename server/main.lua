@@ -1,8 +1,7 @@
----------------------------------------------
------- LISTA DE EVENTOS PROIBIDOS  ------
----------------------------------------------
-
-local EventosHacker = { -- REMOVA ALGUNS CASO SEU SERVIDOR ULTILIZE
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ANTI-TRIGGERS -- AQUI VÃO TRIGGERS SERVER-SIDE QUE ALGUNS LUA EXEC EXECUTAM
+-----------------------------------------------------------------------------------------------------------------------------------------
+local EventosHacker = {
     "8321hiue89js",
     "adminmenu:allowall",
     "AdminMenu:giveBank",
@@ -205,22 +204,16 @@ local EventosHacker = { -- REMOVA ALGUNS CASO SEU SERVIDOR ULTILIZE
     "vrp:noclip",
     "vrp:teleport",
     "vrp:teleportar",
-    "esx_vehicleshop:setVehicleOwned", ----- REMOVA CASO USE OS TRIGGERS PADRÕES
-    "esx_mafiajob:getOtherPlayerData", -------- REMOVA CASO USE OS TRIGGERS PADRÕES
+    "esx_mafiajob:getOtherPlayerData", -- REMOVA CASO USE O "ESX_MAFIAJOB" PADRÃO
     "xaxaxaxaxaxaxaxaxax",
     "lscustoms:payGarage",
-    "esx_jobs:caution",
     "esx_carthief:pay",
     "esx_godirtyjob:pay",
     "esx_banksecurity:pay",
     "e8a5d81b-5c30-4cf1-a16e-5805fc8fd24e",
-    "esx_airlines:addLicense",
     "esx_pilot:success",
-    "paycheck:salary",
     "dropOff",
-    "PayForRepairNow",
-    "esx_inventoryhud:openPlayerInventory" -- CASO VOCÊ TENHA O "esx_inventoryhud" REMOVA
-
+    "PayForRepairNow"
 }
 
 local banido = ""
@@ -244,7 +237,7 @@ AddEventHandler('playerConnecting', function(user, set) -- Quando ele entra faz 
 			break
 		end
 	end
-end)
+end) 
 
 for i, eventName in ipairs(EventosHacker) do -- Se algum hacker usar um evento ele bane
     RegisterNetEvent(eventName)
@@ -253,7 +246,6 @@ for i, eventName in ipairs(EventosHacker) do -- Se algum hacker usar um evento e
       function()
         local _source = source
         local name = GetPlayerName(_source)
-        local webhook = 'https://ptb.discordapp.com/api/webhooks/659037429415673875/NSIUMlu9Emua_PanLvxNphZ2YqYVxmOMJtZBJ-6tDrXQ169zm6hrFejZgoKPNOvzHMeY'
   
         local steam = ""
         local license = ""
@@ -278,7 +270,7 @@ for i, eventName in ipairs(EventosHacker) do -- Se algum hacker usar um evento e
           end
         end
 
-        SendWebhookMessage(webhook, "```O [User:" ..name.. "] Foi Banido por usar mod menu SERVER-SIDE!.```")
+        SendWebhookMessage(Config.webhook, "```O [User:" ..name.. "] Foi Banido por usar mod menu SERVER-SIDE!.```")
         for k,v in ipairs(GetPlayerIdentifiers(source))do
             banirUser(v)
         end
@@ -286,3 +278,86 @@ for i, eventName in ipairs(EventosHacker) do -- Se algum hacker usar um evento e
       end
     )
   end
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ANTI FLOOD HACK -- MUITOS "MODS MENU" USAM ISSO AO FAZER UMA AÇÃO NO SERVIDOR
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+local blacklisted = 
+    {
+  ------------------------------- FRASES PROIBIDAS NO CHAT
+    "/ooc kogusz menu! Buy at https://discord.gg/BbDMhJe",
+    "/ooc Baggy Menu! Buy at https://discord.gg/AGxGDzg",
+    "/ooc Desudo Menu! Buy at https://discord.gg/hkZgrv3",
+    "/ooc Yo add me Fallen#0811",
+    "/ooc \107\111\103\117\115\122\10 menu! Buy at https://discord.gg/BM5zTvA",
+    "/frp kogusz menu! Buy at https://discord.gg/BbDMhJe",
+    "/frp Baggy Menu! Buy at https://discord.gg/AGxGDzg",
+    "/frp Desudo Menu! Buy at https://discord.gg/hkZgrv3",
+    "/frp Yo add me Fallen#0811",
+    "/frp \107\111\103\117\115\122\10 menu! Buy at https://discord.gg/BM5zTvA",
+    "BAGGY menu <3 https://discord.gg/AGxGDzg",
+    "KoGuSzMENU <3 https://discord.gg/BbDMhJe",
+    "KoGuSzMENU <3 https://discord.gg/BM5zTvA",
+    "Desudo menu <3 https://discord.gg/hkZgrv3",
+    "Yo add me Fallen#0811",
+    "Lynx 8 ~ www.lynxmenu.com",
+    "Lynx 7 ~ www.lynxmenu.com",
+    "lynxmenu.com",
+    "www.lynxmenu.com",
+    "You got raped by Lynx 8",
+    "^0Lynx 8 ~ www.lynxmenu.com",
+    "^0AlphaV ~ 5391",
+    "^0You got raped by AlphaV",
+    "^0TITO MODZ - Cheats and Anti-Cheat",
+    "^0https://discord.gg/AGxGDzg",
+    "^0https://discord.gg/hkZgrv3",
+    "You just got fucked mate",
+    "Add me Fallen#0811",
+    "Desudo; Plane#000",
+    "BAGGY; baggy#6875",
+    "SKAZAMENU",
+    "skaza",
+    "aries",
+    "youtube.com"
+    }
+
+AddEventHandler('chatMessage', function(source, name, message)
+    
+  local _source = source
+  local name = GetPlayerName(_source)
+
+  local steam = ""
+  local license = ""
+  local discord = ""
+  local xbl = ""
+  local live = ""
+  local fivem = ""
+
+  for k, v in pairs(GetPlayerIdentifiers(_source)) do
+    if string.sub(v, 1, string.len("steam:")) == "steam:" then
+      steam = v
+    elseif string.sub(v, 1, string.len("license:")) == "license:" then
+      license = v
+    elseif string.sub(v, 1, string.len("xbl:")) == "xbl:" then
+      xbl = v
+    elseif string.sub(v, 1, string.len("discord:")) == "discord:" then
+      discord = v
+    elseif string.sub(v, 1, string.len("live:")) == "live:" then
+      live = v
+    elseif string.sub(v, 1, string.len("fivem:")) == "fivem:" then
+      fivem = v
+    end
+  end
+
+  for i , word in ipairs(blacklisted) do
+    if string.match(message, word) then
+      SendWebhookMessage(Config.webhook, "```O [User:" ..name.. "] Foi Banido por usar mod menu SERVER-SIDE!.```")
+      for k,v in ipairs(GetPlayerIdentifiers(source))do
+        banirUser(v)
+      end
+      DropPlayer(source, 'ZentriX-Anticheat / Eu acho que você tentou injetar algo :)')
+      CancelEvent()
+      end
+    end
+
+end)
