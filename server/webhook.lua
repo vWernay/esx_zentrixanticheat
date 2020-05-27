@@ -66,7 +66,7 @@ end
 
 function banirUser(id) -- Bane o palyer
 	banido = banido .. id .. "\n"
-	SaveResourceFile("ANTICHEAT", "data/bans.txt", banido, -1)
+	SaveResourceFile("esx_zentrixanticheat", "data/bans.txt", banido, -1)
 	banidoTable[id] = true
 end
 
