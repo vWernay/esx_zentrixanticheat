@@ -1,20 +1,23 @@
 # esx_zentrixanticheat
-É um anticheat para a framework ESX em execução no FiveM. Quero dizer, vamos lá. Isso é meio óbvio pelo nome, não é kk?
+É um anticheat para a framework ESX que funciona no FiveM. Quero dizer, vamos lá. Isso é meio óbvio pelo nome, não é kk?
 
-Não há tópico de suporte para esta versão nos fóruns do FiveM. Se precisar de ajuda, envie um problema aqui. 
-EM BREVE NOS TÓPICOS DO FIVEM.
+>ATENÇÃO
+**Esse script está desatualizado e desotimizado, em breve lançarei uma nova versão.**
 
-Esse script é gerado por muitos trabalhos anteriores, mas principalmente, os dois recursos a seguir foram vitais para criar isso e devem ser agradecidos por seu trabalho duro:
+Não há tópico de suporte para esta versão nos fóruns do FiveM. Se precisar de ajuda, envie o problema aqui. 
+~~EM BREVE NOS TÓPICOS DO FIVEM.~~
+
+Esse script foi feito por muitos trabalhos anteriores, mas principalmente, os dois scripts a seguir foram vitais para criar isso e devem ser agradecidos por seu trabalho duro:
 
 **es_admin2** https://github.com/TanguyOrtegat/es_admin2
 
-**Zentry_Antciheat** https://github.com/Muulfz/ZentryAnticheat_FiveM
+**Zentry_Anticheat** https://github.com/Muulfz/ZentryAnticheat_FiveM
 
-**Este recurso requer a framework ESX e suas dependências.**
+**Este script requer o framework ESX e suas dependências.**
 
-**Instalação:** Coloque a pasta no diretório de resources e configure o script de acordo com o seu servidor, adicione "esx_zentrixanticheat" no server.cfg, e inicie o servidor.
+**Instalação:** Coloque a pasta no diretório de resources e configure o script de acordo com o seu servidor, adicione "ensure esx_zentrixanticheat" no server.cfg, e inicie o servidor.
 
-**Configuração:** o arquivo de configuração que são os: **webhook.lua** e **checkcheater.lua** permite que você defina seu webhook, as armas bloqueadas e as props bloqueadas.
+**Configuração:** O arquivo de configuração que são os: **webhook.lua** e **checkcheater.lua** permite que você defina seu webhook, as armas bloqueadas e as props bloqueadas.
 
 **O que ele faz:** banirá usuários e enviara nos logs os jogadores que tentarem usar **eventos** proibidos como spawn de dinheiro, os carros da blacklist serão excluídos, caso o player pegue uma arma blacklist ele enviará no discord o **nome** e o **id** do jogador que fez isto. 
 
