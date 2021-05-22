@@ -1,5 +1,5 @@
 # esx_zentrixanticheat
-É um anticheat para a framework ESX que funciona no FiveM. Quero dizer, vamos lá. Isso é meio óbvio pelo nome, não é kk?
+É um anticheat para o framework ESX que funciona no FiveM. Quer dizer, vamos lá. Isso é meio óbvio pelo nome, não é kkk?
 
 >ATENÇÃO
 **Esse script está desatualizado e desotimizado, em breve lançarei uma nova versão.**
@@ -7,7 +7,7 @@
 Não há tópico de suporte para esta versão nos fóruns do FiveM. Se precisar de ajuda, envie o problema aqui. 
 ~~EM BREVE NOS TÓPICOS DO FIVEM.~~
 
-Esse script foi feito por muitos trabalhos anteriores, mas principalmente, os dois scripts a seguir foram vitais para criar isso e devem ser agradecidos por seu trabalho duro:
+Esse script foi feito por muitos trabalhos anteriores, mas principalmente, os dois scripts a seguir foram vitais para criar isso e devem ser agradecidos por seu trabalho:
 
 **es_admin2** https://github.com/TanguyOrtegat/es_admin2
 
@@ -24,4 +24,4 @@ Esse script foi feito por muitos trabalhos anteriores, mas principalmente, os do
 **Controle de Banimentos:** Os banimentos ficam guardados na pasta: **data/bans.txt**. Para desbanir um jogador é só remover os identificadores dele.
 
 # Observações
-Nos arquivos: **client/main.lua** e **server/main.lua** controlam os eventos proibidos, antes de iniciar o script abra eles e vejam se algum dos eventos estão sendo usados no seu servidor.
+Nos arquivos: **client/main.lua** e **server/main.lua** controlam os eventos proibidos, antes de iniciar o script abra eles e vejam se algum dos eventos estão sendo usados em seu servidor para evitar punições falsas.
